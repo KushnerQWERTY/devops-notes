@@ -1,1 +1,11 @@
+Создано 2 пользователя
+sudo useradd -m alice
+sudo passwd alice
 
+sudo useradd -m bob 
+sudo passwd bob
+
+Далее создана папка mkdir company, в которой создан файл touch report.txt.
+Меняем владельца файла: sudo chown alice report.txt, теперь она владелец этого файла, НО
+это не значит, что она может его открыть. Дело в том, что файл находится по пути /home/user/company/report.txt
+Соответственно нужно выдать права на открытие этих директорий или добавить в группу.
