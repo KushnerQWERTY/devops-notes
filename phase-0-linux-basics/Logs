@@ -1,1 +1,24 @@
+Принимаем логи в файл с его созданием: 
+echo "error1" > log.txt
+echo "error2" >> log.txt
+echo "done" >> log.txt
+echo "error3" >> log.txt
 
+Далее мы можем осуществить поиск ошибок:
+
+grep "error" log.txt
+Вывод: 
+error1
+error2
+error3
+
+Также, с помощью grep, мы можем заносить строки с ошибкой в отдельный файл
+
+grep "erorr" log.txt > errors.txt
+Вывод:
+Новый текстовой файл с содержимым: error1, error2, error3
+
+Чтобы вывести общее количество ошибок, можно использовать: 
+
+grep "error" log.txt | wc -l
+Вывод: 3
